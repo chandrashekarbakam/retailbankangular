@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:4000/api'
+  apiUrl: 'https://chandu.loca.lt/api',
+  gatewayUrl: 'https://chandu.loca.lt/gateway'
 };
