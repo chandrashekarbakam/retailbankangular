@@ -1,0 +1,38 @@
+<div class="container-fluid">
+    <!--<h3 class="d-flex justify-content-center mt-3">Retail Banking System</h3>-->
+  <h5 class="d-flex justify-content-center">Home Page</h5>
+
+  
+  <div class="mt-4 mb-4">
+    
+    <div class="d-flex" style="justify-content:space-around;">
+      <button class="btn btn-outline-success" routerLink="/accountdetails">View Account Details</button>
+        <button class="btn btn-outline-success dropdown-toggle"  type="button"  data-bs-toggle="dropdown" aria-expanded="false">
+          Commit Transactions
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li routerLink="/deposit"><a class="dropdown-item">Deposit</a></li>
+          <li routerLink="/withdraw"><a class="dropdown-item">Withdraw</a></li>
+          <li routerLink="/transfer"><a class="dropdown-item">Transfer</a></li>
+        </ul>
+      <button class="btn btn-outline-success"  routerLink="/accountstatement">View Statement</button>
+      <button class="btn btn-outline-success"  routerLink="/accounttransactions">View Transactions</button>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    
+    <div class="card-body">
+        <p><strong>Hello   <strong>{{userFromApi.firstName}}</strong>, thankyou for choosing <strong>INDIAN RETAIL BANK</strong></strong></p>
+        <p>Your role is: <strong>{{user.role}}</strong>.</p>
+        <!-- <p>This page can be accessed by <u>all authenticated users</u>.</p> -->
+        <p class="mb-1">Current user Details:</p>
+        <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
+        <ul *ngIf="userFromApi">
+          <li>Id : {{userFromApi.id}}</li>
+          <li>Name : {{userFromApi.firstName}} {{userFromApi.lastName}}</li>
+          <li>Username : {{userFromApi.username}}</li>
+        </ul>
+    </div>
+  </div>
+</div>
